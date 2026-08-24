@@ -14,37 +14,37 @@ while hp>0:
  if choice=="1":
   monster=random.choice(monsters)
   monster_hp=random.randint(30,60)
-  print(f"\nA {monster} appeared!")
+  print(f"\nA {monster} appeared")
   while monster_hp>0 and hp>0:
    print(f"\nYour HP: {hp}")
    print(f"{monster} HP: {monster_hp}")
    print("1. Attack")
    print("2. Heal")
-   action=input("Choose: ")
+   action=input("Choose:")
    if action=="1":
     damage=random.randint(attack-2,attack+5)
     monster_hp-=damage
-    print(f"You dealt {damage} damage!")
+    print(f"You dealt {damage} damage")
     if monster_hp>0:
      damage=random.randint(5,15)
      hp-=damage
-     print(f"The {monster} hit you for {damage} damage!")
+     print(f"The {monster} hit you for {damage} damage")
    elif action=="2":
     if potions>0:
      hp=min(100,hp+25)
      potions-=1
-     print("You healed 25 HP!")
+     print("You healed 25 HP")
     else:
-     print("You have no potions!")
+     print("You have no potions")
    else:
-    print("Invalid choice!")
+    print("Invalid choice")
   if hp<=0:
-   print("\n💀 YOU LOST!")
+   print("\n YOU Lost")
   else:
    reward=random.randint(10,25)
    coins+=reward
-   print(f"\nYou defeated the {monster}!")
-   print(f"You earned {reward} coins!")
+   print(f"\nYou defeated the {monster}")
+   print(f"You earned {reward} coins")
  elif choice=="2":
   print("\n===== STATS =====")
   print(f"HP: {hp}/100")
@@ -59,15 +59,15 @@ while hp>0:
   if shop=="1" and coins>=10:
    coins-=10
    potions+=1
-   print("You bought a potion!")
+   print("You bought a potion")
   elif shop=="2" and coins>=25:
    coins-=25
    attack+=5
-   print("Your attack increased!")
+   print("Your attack increased")
   else:
-   print("Not enough coins!")
+   print("Not enough coins")
  elif choice=="4":
-  print("Thanks for playing!")
+  print("Thanks for playing")
   break
  else:
-  print("Invalid choice!")
+  print("Invalid choice")
